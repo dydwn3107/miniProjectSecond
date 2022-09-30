@@ -57,7 +57,11 @@
 
 								</ul></li>
 
-							<li><a href="infoFood.do">정보 게시판</a></li>
+							<li class="has-sub"><a href="infoFood.do">정보 게시판</a>
+								<ul class="sub-menu">
+									<li><a href="infoCafe.do">스터디 카페</a></li>
+									<li><a href="infoFood.do">맛집</a></li>
+								</ul></li>
 							<li><c:choose>
 									<c:when test="${empty memberId }">
 										<a href="memberLoginForm.do">로그인 & 회원가입</a>
