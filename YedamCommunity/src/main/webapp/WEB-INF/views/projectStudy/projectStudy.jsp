@@ -14,8 +14,6 @@
 
 <style>
 .category {
-	margin-left: 24%;
-	margin-top: 40px;
 }
 
 .category div {
@@ -33,7 +31,7 @@ body {
 .wrapper {
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 80px;
+	margin-top: 40px;
 	clear: both;
 }
 
@@ -128,14 +126,42 @@ body {
 }
 
 section.heading-page {
-	background-image: url(headercss/images/heading-bg.jpg);
+	background-image: url(headercss/images/projectStudy1.jpg);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	padding-top: 230px;
-	padding-bottom: 110px;
+	padding-top: 220px;
+	padding-bottom: 40px;
 	text-align: center;
 }
+
+.ccontainer {
+	max-width: 1500px;
+	margin-left:auto;
+	margin-right: auto;
+}
+
+h3.display-6 span {
+ opacity: 0.5;
+}
+ 
+h3.display-6:hover > span{
+	opacity:1;
+	cursor:pointer;
+}
+
+h3.display-6:active > span {
+	opacity: 1;
+}
+
+h3#newCard > button > h3.display-6 {
+ 	margin-bottom: 0;
+ }
+
+h3#newCard:hover > button > h3.display-6 {
+	color: white;
+}
+
 </style>
 </head>
 <body>
@@ -144,53 +170,66 @@ section.heading-page {
 			<div class="row">
 				<div class="col-lg-12">
 
-					<h2>Yedam community</h2>
+					<h1 class="display-4" style="font-weight: lighter; color: white">Project & Study</h1>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- 로그인 상태에서만 글쓰기 버튼 보임 -->
-	<c:if test="${not empty memberId}">
-		<div style="float: right; margin-top: 30px; margin-right: 22%;">
-			<button type="button" class="btn btn-outline-warning btn-rounded"
-				data-mdb-ripple-color="dark"
-				onclick="location.href='projectStudyInsertForm.do'">
-				<h2 style="margin: 0">새 글 쓰기</h2>
-			</button>
-		</div>
-	</c:if>
-
 	<!-- start 모집분류 라디오 버튼 -->
-	<section class="category">
-		<div class="form-check form-switch">
-			<h3>
-				<input class="form-check-input" type="radio" role="switch"
-					id="flexSwitchCheckDefault1" name="category"
-					onclick="location.href='projectStudyCard.do'" checked="checked">
-				<label class="form-check-label" for="flexSwitchCheckDefault1">전체</label>
-			</h3>
-		</div>
-		<div class="form-check form-switch" style="margin-left: 60px;">
-			<h3>
-				<input class="form-check-input" type="radio" role="switch"
-					id="flexSwitchCheckDefault2" name="category"
-					onclick="location.href='projectCard.do'"> <label
-					class="form-check-label" for="flexSwitchCheckDefault2">프로젝트</label>
-			</h3>
-		</div>
-		<div class="form-check form-switch" style="margin-left: 60px;">
-			<h3>
-				<input class="form-check-input" type="radio" role="switch"
-					id="flexSwitchCheckDefault3" name="category"
-					onclick="location.href='studyCard.do'"> <label
-					class="form-check-label" for="flexSwitchCheckDefault3">스터디</label>
-			</h3>
-		</div>
+	<section class="category" style="clear:right; padding-top: 20px; background-color: aquaMarine">
+			
+			<div id="categorys" style="margin-left: 10%" onclick="location.href='projectStudyCard.do'">
+				<h3 class="display-6">
+				<span style="opacity: 1;">
+					<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentcolor" class="bi bi-stack" viewBox="0 0 16 16" opacity="1" >
+				    	<path d="m14.12 10.163 1.715.858c.22.11.22.424 0 .534L8.267 15.34a.598.598 0 0 1-.534 0L.165 11.555a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.66zM7.733.063a.598.598 0 0 1 .534 0l7.568 3.784a.3.3 0 0 1 0 .535L8.267 8.165a.598.598 0 0 1-.534 0L.165 4.382a.299.299 0 0 1 0-.535L7.733.063z"/>
+				    	<path d="m14.12 6.576 1.715.858c.22.11.22.424 0 .534l-7.568 3.784a.598.598 0 0 1-.534 0L.165 7.968a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.659z"/>
+					</svg> 전체
+				</span>
+				</h3>
+			</div>
+			&nbsp;&nbsp;&nbsp;
+			<div id="categorys" style="margin-left: 20px;" onclick="location.href='projectCard.do'">
+				<h3 class="display-6">
+					<span>
+						<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentcolor" class="bi bi-folder-fill" viewBox="0 0 18 18" style="margin-right:10px">
+						    <path d="M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.825a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3zm-8.322.12C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139z"/>
+						</svg>프로젝트
+					</span>
+				</h3>
+			</div>
+			<div id="categorys" style="margin-left: 30px;" onclick="location.href='studyCard.do'">
+				<h3 class="display-6">
+					<span>
+						<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16" style="margin-right:5px; margin-bottom: 10px;">
+						    <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+						</svg>스터디
+					</span>
+				</h3>
+			</div>
+			<!-- 로그인 상태에서만 글쓰기 버튼 보임 -->
+			<c:if test="${not empty memberId}">
+				<div style="margin-left: 40%">
+					<h3 id="newCard">
+						<button type="button" class="btn btn-outline-warning btn-rounded display-6"
+							data-mdb-ripple-color="dark" style="border-radius: 5px; border:2px solid gold; background-color: gold; padding-bottom: 0"
+							onclick="location.href='projectStudyInsertForm.do'">
+							<h3 class="display-6">
+								새 글 쓰기
+							</h3>
+						</button>
+					</h3>
+				</div>
+				
+			</c:if>
 	</section>
+	
+	<hr style="margin-left: auto; margin-right: auto; margin-top: 0; margine-bottom: 5px">
+	
 	<!-- end 모집분류 라디오 버튼 -->
 
 	<section class="wrapper">
-		<div class="container">
+		<div class="ccontainer">
 			<div id="cardContainer" class="row">
 
 				<!-- start 모집글이 없을 시 -->
@@ -204,7 +243,7 @@ section.heading-page {
 				<!-- start 모집글이 존재 시 카드 만들기 -->
 				<c:if test="${not empty list}">
 					<c:forEach items="${list}" var="card">
-						<div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+						<div class="col-sm-12 col-md-6 col-lg-3 mb-4">
 							<div class="card text-white card-has-bg click-col"
 								style="background-image: url('https://source.unsplash.com/600x900/?programming');">
 								<img class="card-img d-none"
@@ -282,6 +321,7 @@ section.heading-page {
 			document.getElementById('projectStudyId').value = selectedCardId;
 			selectedCardToServer.submit();
 		}
+		
 	</script>
 </body>
 </html>
