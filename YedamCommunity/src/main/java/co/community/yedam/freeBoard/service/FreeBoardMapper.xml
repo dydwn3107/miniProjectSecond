@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="co.community.yedam.freeBoard.service.FreeBoardMapper">
+
+	<select id="freeBoardSelectList"
+		resultType="co.community.yedam.freeBoard.service.FreeBoardVO">
+		SELECT * FROM FREE_BOARD
+		ORDER BY FREE_BOARD_ID DESC
+	</select>
+
+	<select id="freeBoardSelect"
+		resultType="co.community.yedam.freeBoard.service.FreeBoardVO">
+		SELECT * FROM FREE_BOARD
+		WHERE FREE_BOARD_ID =
+		#{freeBoardId}
+	</select>
+
+	<insert id="freeBoardInsert"
+		parameterType="co.community.yedam.freeBoard.service.FreeBoardVO">
+		<selectKey keyProperty="freeBoardId" resultType="int"
+			order="BEFORE">
+			SELECT CASE WHEN MAX(FREE_BOARD_ID) IS NULL THEN 1 ELSE
+			MAX(FREE_BOARD_ID) + 1 END AS ID
+			FROM FREE_BOARD
+		</selectKey>
+		INSERT INTO FREE_BOARD
+		VALUES(#{freeBoardId},#{freeBoardTitle},#{freeBoardSubject},SYSDATE,#{freeBoardAttech},#{freeBoardAttechDir},#{freeBoardHit},#{freeBoardLike},#{memberId
+		})
+	</insert>
+
+	<update id="freeBoardUpdate"
+		parameterType="co.community.yedam.freeBoard.service.FreeBoardVO">
+		UPDATE FREE_BOARD
+		<set>
+			<if test="freeBoardTitle != null"> FREE_BOARD_TITLE = #{freeBoardTitle},</if>
+			<if test="freeBoardSubject != null"> FREE_BOARD_SUBJECT = #{freeBoardSubject},</if>
+			<if test="freeBoardAttech != null"> FREE_BOARD_ATTECH = #{freeBoardAttech},</if>
+			<if test="freeBoardAttechDir != null"> FREE_BOARD_ATTECH_DIR = #{freeBoardAttechDir}</if>
+		</set>
+		WHERE FREE_BOARD_ID = #{freeBoardId}
+
+	</update>
+
+	<delete id="freeBoardDelete"
+		parameterType="co.community.yedam.freeBoard.service.FreeBoardVO">
+		DELETE FROM FREE_BOARD WHERE FREE_BOARD_ID =
+		#{freeBoardId}
+	</delete>
+
+	<update id="freeBoardHitUpdate" parameterType="int">
+		UPDATE FREE_BOARD
+		SET FREE_BOARD_HIT = FREE_BOARD_HIT + 1 WHERE FREE_BOARD_ID = #{id}
+	</update>
+
+	<update id="freeBoardLikeUpdate" parameterType="int">
+		UPDATE FREE_BOARD
+		SET FREE_BOARD_Like = FREE_BOARD_Like + 1 WHERE FREE_BOARD_ID = #{id}
+	</update>
+
+	<select id="freeBoardCount" resultType="int">
+		SELECT COUNT(*) FROM
+		FREE_BOARD
+	</select>
+
+	<select id="freeBoardSearchList"
+		resultType="co.community.yedam.freeBoard.service.FreeBoardVO">
+		SELECT * FROM FREE_BOARD
+		WHERE
+		<if test="key == 0">1 = 1</if>
+		<if test="key == 1"> FREE_BOARD_TITLE LIKE '%'|| #{val} ||'%'</if>
+		<if test="key == 2"> MEMBER_ID LIKE '%'|| #{val} ||'%'</if>
+		ORDER BY FREE_BOARD_ID DESC
+	</select>
+
+</mapper>

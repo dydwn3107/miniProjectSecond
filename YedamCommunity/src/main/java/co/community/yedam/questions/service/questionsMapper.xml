@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="co.community.yedam.questions.service.questionsMapper">
+
+
+	<select id="questionsSelectList"
+		resultType="co.community.yedam.questions.service.questionsVO">
+		SELECT * FROM QUESTIONS ORDER BY QUESTIONS_ID DESC
+			</select>
+	
+
+	<!-- 동적 sql예시. id만 들어오면 찾아주고, 둘 다 들어오면 로그인 처리해주는 거 -->
+	<select id="questionsSelect"
+		resultType="co.community.yedam.questions.service.questionsVO">
+		SELECT * FROM QUESTIONS
+		WHERE QUESTIONS_ID = #{questionsId}
+
+	</select>
+
+	
+
+	<insert id="questionsInsert">
+		<selectKey keyProperty="questionsId" resultType="int"
+			order="BEFORE">
+			SELECT CASE WHEN MAX(QUESTIONS_ID) IS NULL THEN 1
+		    ELSE
+			MAX(QUESTIONS_ID) + 1 END AS ID
+			FROM QUESTIONS
+		</selectKey>
+		INSERT INTO QUESTIONS (QUESTIONS_ID,QUESTIONS_TITLE,QUESTIONS_CONTENT,QUESTIONS_DATE,MEMBER_ID)
+		VALUES (#{questionsId},#{questionsTitle},#{questionsContent},SYSDATE,#{memberId})
+		
+	</insert>
+
+	<update id="questionsUpdate" parameterType="co.community.yedam.questions.service.questionsVO">
+		UPDATE QUESTIONS
+		
+		<set>
+		<if test="questionsTitle != null">questions_title = #{questionsTitle},</if>
+		<if test="questionsContent != null">questions_content = #{questionsContent},</if>
+		<if test="questionsDate != null">questions_date = #{questionsDate}</if>
+		</set>
+		WHERE QUESTIONS_ID = #{questionsId}
+	</update>
+	
+
+	<delete id="questionsDelete">
+		DELETE FROM QUESTIONS
+		WHERE
+		QUESTIONS_ID = #{questionsId}
+	</delete>
+	
+	<select id="questionsSearchList" resultType="co.community.yedam.questions.service.questionsVO">
+		SELECT * FROM questions
+		WHERE 
+		<if test="key == 0">1 = 1</if>
+		<if test="key == 1"> questions_TITLE LIKE '%'|| #{val} ||'%'</if>
+		<if test="key == 2"> MEMBER_ID LIKE '%'|| #{val} ||'%'</if>
+		<if test="key == 3"> questions_content LIKE '%'|| #{val} ||'%'</if>
+		ORDER BY questions_ID DESC
+	</select>
+	
+	
+
+
+
+</mapper>
