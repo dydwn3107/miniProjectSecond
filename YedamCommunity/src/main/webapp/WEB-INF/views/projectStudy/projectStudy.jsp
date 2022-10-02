@@ -176,7 +176,7 @@ h3#newCard:hover > button > h3.display-6 {
 		</div>
 	</section>
 	<!-- start 모집분류 라디오 버튼 -->
-	<section class="category" style="clear:right; padding-top: 20px; background-color: aquaMarine">
+	<section class="category" style="clear:right; padding-top: 20px; background-color: whitesmoke">
 			
 			<div id="categorys" style="margin-left: 10%" onclick="location.href='projectStudyCard.do'">
 				<h3 class="display-6">
