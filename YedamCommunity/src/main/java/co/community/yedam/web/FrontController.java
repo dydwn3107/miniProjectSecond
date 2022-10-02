@@ -33,6 +33,7 @@ import co.community.yedam.freeBoard.command.FreeBoardSearchForm;
 import co.community.yedam.freeBoard.command.FreeBoardSelect;
 import co.community.yedam.freeBoard.command.FreeBoardUpdateLike;
 import co.community.yedam.member.command.AjaxMemberIdCheck;
+import co.community.yedam.member.command.Dashboard;
 import co.community.yedam.member.command.MemberDelete;
 import co.community.yedam.member.command.MemberJoin;
 import co.community.yedam.member.command.MemberJoinForm;
@@ -96,6 +97,7 @@ public class FrontController extends HttpServlet {
 		map.put("/memberDelete.do", new MemberDelete());
 		map.put("/memberSelectList.do", new MemberSelectList());
 		map.put("/memberSelect.do", new MemberSelect());
+		map.put("/dashboard.do", new Dashboard());
 		
 		// Questions
 		map.put("/questionsWriteForm.do", new QuestionsWriteForm());
