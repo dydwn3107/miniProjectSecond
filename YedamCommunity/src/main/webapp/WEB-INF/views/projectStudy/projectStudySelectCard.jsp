@@ -159,10 +159,18 @@
 						<input type="hidden" id="projectStudySubject" name="projectStudySubject" value="${card.projectStudySubject}">
 						<h5>
 							<input type="button" value="목록" onclick="location.href='projectStudyCard.do'">&nbsp;&nbsp;
-							<c:if test="${memberId eq card.memberId}">
-								<input type="button" value="수정" onclick="editAndDelete('edit')">&nbsp;&nbsp;
-								<input type="button" value="삭제" onclick="editAndDelete('delete')">&nbsp;&nbsp;
-							</c:if>
+							<!-- 본인 글은 수정삭제 가능, 타인글은 관리자만 삭제가능 -->
+							<c:choose>
+								<c:when test="${memberId eq card.memberId}">
+									<input type="button" value="수정" onclick="editAndDelete('edit')">&nbsp;&nbsp;
+									<input type="button" value="삭제" onclick="editAndDelete('delete')">&nbsp;&nbsp;
+								</c:when>
+								<c:otherwise>
+									<c:if test="${memberAuthor eq 'ADMIN'}">
+										<input type="button" value="삭제" onclick="editAndDelete('delete')">&nbsp;&nbsp;
+									</c:if>
+								</c:otherwise>
+							</c:choose>
 						</h5>
 					</form>
 				</div>
