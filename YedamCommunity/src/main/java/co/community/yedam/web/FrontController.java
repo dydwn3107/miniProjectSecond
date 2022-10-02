@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.community.yedam.Main;
 import co.community.yedam.cafeInfo.command.InfoCafe;
+import co.community.yedam.comment.command.CommentDelete;
+import co.community.yedam.comment.command.CommentInsert;
 import co.community.yedam.common.Command;
 import co.community.yedam.foodInfo.command.Store1;
 import co.community.yedam.foodInfo.command.Store2;
@@ -29,7 +31,6 @@ import co.community.yedam.freeBoard.command.FreeBoardEdit;
 import co.community.yedam.freeBoard.command.FreeBoardEditForm;
 import co.community.yedam.freeBoard.command.FreeBoardInsert;
 import co.community.yedam.freeBoard.command.FreeBoardInsertForm;
-import co.community.yedam.freeBoard.command.FreeBoardSearchForm;
 import co.community.yedam.freeBoard.command.FreeBoardSelect;
 import co.community.yedam.freeBoard.command.FreeBoardUpdateLike;
 import co.community.yedam.member.command.AjaxMemberIdCheck;
@@ -118,16 +119,17 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeBoardDelete.do", new NoticeBoardDelete()); 		// 상세보기에서 게시글 삭제
 		
 		// FreeBoard
-		map.put("/freeBoard.do", new FreeBoard());
-		map.put("/freeBoardInsertForm.do", new FreeBoardInsertForm());
-		map.put("/freeBoardInsert.do", new FreeBoardInsert());
-		map.put("/freeBoardSelect.do", new FreeBoardSelect());
-		map.put("/freeBoardEditForm.do", new FreeBoardEditForm()); 		// 자유게시판 작성 글 수정폼 호출.
-		map.put("/freeBoardEdit.do", new FreeBoardEdit()); 				// 자유게시판 작성 글 수정.
-		map.put("/freeBoardDelete.do", new FreeBoardDelete());
-		map.put("/freeBoardUpdateLike.do", new FreeBoardUpdateLike()); 	// 자유게시판 좋아요 기능.
-		map.put("/freeBoardSearchForm.do", new FreeBoardSearchForm());
-		map.put("/ajaxFreeBoardSearch.do", new AjaxFreeBoardSearch());
+		map.put("/freeBoard.do", new FreeBoard());						// 자유게시판 전체 리스트.
+		map.put("/freeBoardInsertForm.do", new FreeBoardInsertForm());	// 자유게시판 글 작성폼 호출.
+		map.put("/freeBoardInsert.do", new FreeBoardInsert());			// 자유게시판 글 수정 호출.
+		map.put("/freeBoardSelect.do", new FreeBoardSelect());			// 자유게시판 글 상세 조회.
+		map.put("/freeBoardEditForm.do", new FreeBoardEditForm()); 		// 자유게시판 글 수정폼 호출.
+		map.put("/freeBoardEdit.do", new FreeBoardEdit()); 				// 자유게시판 글 수정.
+		map.put("/freeBoardDelete.do", new FreeBoardDelete());			// 자유게시판 글 삭제.
+		map.put("/freeBoardUpdateLike.do", new FreeBoardUpdateLike()); 	// 자유게시판 좋아요.
+		map.put("/ajaxFreeBoardSearch.do", new AjaxFreeBoardSearch());	// 자유게시판 검색.
+		map.put("/commentInsert.do", new CommentInsert()); 				// 자유게시판 댓글 작성.
+		map.put("/commentDelete.do", new CommentDelete());				// 자유게시판 댓글 삭제.
 		
 		// Info
 		map.put("/infoFood.do", new foodInfo());

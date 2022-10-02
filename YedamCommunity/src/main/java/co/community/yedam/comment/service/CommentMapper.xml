@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="co.community.yedam.comment.service.CommentMapper">
+
+	<select id="commentList"
+		resultType="co.community.yedam.comment.service.CommentVO">
+		SELECT * FROM FREE_BOARD_COMMENT
+		WHERE FREE_BOARD_ID = #{freeBoardId}
+	</select>
+
+	<insert id="insertComment"
+		parameterType="co.community.yedam.comment.service.CommentVO">
+<!-- 		<selectKey keyProperty="commentId" resultType="int"
+			order="BEFORE">
+			SELECT CASE WHEN MAX(FREE_BOARD_COMMENT_ID) IS NULL THEN 1 ELSE
+			MAX(FREE_BOARD_COMMENT_ID) + 1 END AS ID
+			FROM FREE_BOARD_COMMENT
+		</selectKey> -->
+		INSERT INTO FREE_BOARD_COMMENT
+		VALUES(#{freeBoardCommentId},#{freeBoardCommentSubject},SYSDATE,#{freeBoardId},#{memberId})
+	</insert>
+
+	<update id="updateComment"
+		parameterType="co.community.yedam.comment.service.CommentVO">
+		UPDATE FREE_BOARD_COMMENT
+		<set>
+			<if test="freeBoardCommentSubject != null"> FREE_BOARD_COMMENT_SUBJECT = #{freeBoardCommentSubject}</if>
+		</set>
+		WHERE FREE_BOARD_COMMENT_ID = #{freeBoardCommentId}
+
+	</update>
+
+	<delete id="deleteComment"
+		parameterType="co.community.yedam.comment.service.CommentVO">
+		DELETE FROM FREE_BOARD_COMMENT
+		WHERE FREE_BOARD_COMMENT_SUBJECT = #{freeBoardCommentSubject}
+	</delete>
+
+</mapper>
