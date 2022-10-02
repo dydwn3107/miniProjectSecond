@@ -431,11 +431,11 @@ section.heading-page {
 	function createHTMLString(data){  //html 변환 코드 css, event Listner를 활용하면 깔끔하게 정리됨
 		//if(data.noticeAttech == null) data.noticeAttech = ""; //json 객체에서 null값을 ""로대체
 		let str = "<tr onclick=";
-			str += "freeBoardSelect('"+ data.freeBoardId +"')" +">";
+			str += "selectFreeBoard('"+ data.freeBoardId +"')" +">";
 			str += "<td>" + data.freeBoardId + "</td>";
 			str += "<td>" + data.freeBoardTitle + "</td>";
 			str += "<td>" + data.memberId + "</td>";
-			str += "<td>" + data.freeBoardDate + "</td></tr>";
+			str += "<td>" + data.freeBoardDate + "</td>";
 			str += "<td>" + data.freeBoardHit + "</td></tr>";
 			
 		return str;

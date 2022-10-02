@@ -28,6 +28,8 @@
 		<img src="images/kiss.png" alt="" class="emoji">
 	</c:if>
 	<br><br><br><br><br><br><br><br><br><br><br>
+	<h2><a href="main.do">HOME</a></h2>
+	<br><br><br><br>
 	</div>
 </body>
 </html>
