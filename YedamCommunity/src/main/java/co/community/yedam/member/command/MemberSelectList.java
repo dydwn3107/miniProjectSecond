@@ -20,7 +20,7 @@ public class MemberSelectList implements Command {
 		list = dao.memberSelectList();
 
 		request.setAttribute("members", list);
-		return "main/member/memberSelectList";
+		return "noTiles:member/memberSelectList";
 	}
 
 }
