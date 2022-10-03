@@ -158,7 +158,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="infoFood.do">정보 게시판</a>
+                                <a class="nav-link" href="foodInfo.do">정보 게시판</a>
                             </li>
 
                             <li class="nav-item">

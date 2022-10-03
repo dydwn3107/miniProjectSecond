@@ -6,7 +6,6 @@
 		SELECT * FROM PROJECT_STUDY ORDER BY PROJECT_STUDY_ID DESC
 	</select>
 	
-	<!-- 동적 sql예시. id만 들어오면 찾아주고, 둘 다 들어오면 로그인 처리해주는 거 -->
 	<select id="projectStudySelect" resultType="co.community.yedam.projectStudy.service.ProjectStudyVO">
 		SELECT * FROM PROJECT_STUDY
 		WHERE PROJECT_STUDY_ID = #{projectStudyId}

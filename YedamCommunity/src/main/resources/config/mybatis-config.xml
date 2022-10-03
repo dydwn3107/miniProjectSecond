@@ -26,5 +26,6 @@
 		<mapper resource="co/community/yedam/noticeBoard/service/NoticeBoardMapper.xml" />
 		<mapper resource="co/community/yedam/projectStudy/service/ProjectStudyMapper.xml" />
 		<mapper resource="co/community/yedam/comment/service/CommentMapper.xml" />
+    <mapper resource="co/community/yedam/foodInfo/service/FoodInfoMapper.xml" />
   </mappers>
 </configuration>

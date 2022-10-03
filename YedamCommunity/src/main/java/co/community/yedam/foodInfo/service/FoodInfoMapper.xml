@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="co.community.yedam.foodInfo.service.FoodInfoMapper">
+	
+	<select id="foodInfoSelectList" resultType="co.community.yedam.foodInfo.service.FoodInfoVO">
+		SELECT * FROM FOOD_INFO ORDER BY FOOD_INFO_ID DESC
+	</select>
+	
+	<select id="foodInfoSelect" resultType="co.community.yedam.foodInfo.service.FoodInfoVO">
+		SELECT * FROM FOOD_INFO
+		WHERE FOOD_INFO_ID = #{foodInfoId}
+	</select>
+	
+	<insert id="foodInfoInsert" parameterType="co.community.yedam.foodInfo.service.FoodInfoVO">
+		<selectKey keyProperty="foodInfoId" resultType="int" order="BEFORE">
+			SELECT CASE WHEN MAX(FOOD_INFO_ID) IS NULL THEN 1 ELSE
+			MAX(FOOD_INFO_ID) + 1 END AS ID
+			FROM FOOD_INFO
+		</selectKey>
+		
+		INSERT INTO FOOD_INFO
+		VALUES (#{foodInfoId}, #{foodInfoName}, #{foodInfoHashtag}, #{foodInfoTel}, #{foodInfoHolidays},
+		#{foodInfoOpendays}, #{foodInfoLink}, #{foodInfoAddress}, #{foodInfoMenu1}, #{foodInfoMenu1Price},
+		#{foodInfoMenu2}, #{foodInfoMenu2Price}, #{foodInfoAttech}, #{foodInfoAttechDir}, #{foodInfoLastorder},
+		#{foodInfoBreaktime}, #{foodInfoAdditional}, #{foodInfoMap})
+	</insert>
+	
+	<update id="foodInfoUpdate" parameterType="co.community.yedam.foodInfo.service.FoodInfoVO">
+		UPDATE FOOD_INFO
+		<set>
+			<if test="foodInfoName != null"> FOOD_INFO_NAME= #{foodInfoName},</if>
+			<if test="foodInfoHashtag != null"> FOOD_INFO_HASHTAG = #{foodInfoHashtag},</if>
+			<if test="foodInfoTel != null"> FOOD_INFO_TEL = #{foodInfoTel},</if>
+			<if test="foodInfoHolidays != null"> FOOD_INFO_HOLIDAYS = #{foodInfoHolidays},</if>
+			<if test="foodInfoOpendays != null"> FOOD_INFO_OPENDAYS = #{foodInfoOpendays},</if>
+			<if test="foodInfoLink != null"> FOOD_INFO_LINK = #{foodInfoLink},</if>
+			<if test="foodInfoAddress != null"> FOOD_INFO_ADDRESS = #{foodInfoAddress},</if>
+			<if test="foodInfoMenu1 != null"> FOOD_INFO_MENU1 = #{foodInfoMenu1},</if>
+			<if test="foodInfoMenu1Price != null"> FOOD_INFO_MENU1_PRICE = #{foodInfoMenu1Price},</if>
+			<if test="foodInfoMenu2 != null"> FOOD_INFO_MENU2 = #{foodInfoMenu2},</if>
+			<if test="foodInfoMenu2Price != null"> FOOD_INFO_MENU2_PRICE = #{foodInfoMenu2Price},</if>
+			<if test="foodInfoAttech != null"> FOOD_INFO_ATTECH = #{foodInfoAttech},</if>
+			<if test="foodInfoAttechDir != null"> FOOD_INFO_ATTECH_DIR = #{foodInfoAttechDir},</if>
+			<if test="foodInfoLastorder != null"> FOOD_INFO_LASTORDER = #{foodInfoLastorder},</if>
+			<if test="foodInfoBreaktime != null"> FOOD_INFO_BREAKTIME = #{foodInfoBreaktime},</if>
+			<if test="foodInfoAdditional != null"> FOOD_INFO_ADDITIONAL = #{foodInfoAdditional},</if>
+			<if test="foodInfoMap != null"> FOOD_INFO_MAP = #{foodInfoMap}</if>
+		</set>
+		WHERE FOOD_INFO_ID = #{foodInfoId}
+	</update>
+	
+	<delete id="foodInfoDelete" parameterType="co.community.yedam.foodInfo.service.FoodInfoVO">
+		DELETE FOOD_INFO WHERE FOOD_INFO_ID = #{foodInfoId}
+	</delete>
+</mapper>

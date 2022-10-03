@@ -5,12 +5,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.community.yedam.common.Command;
 
-public class foodInfo implements Command {
+public class FoodInfoInsertForm implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
-		return "main/info/foodInfo";
+		// 맛집 새글쓰기 폼으로
+		return "foodInfo/foodInfo/foodInfoInsertForm";
 	}
 
 }

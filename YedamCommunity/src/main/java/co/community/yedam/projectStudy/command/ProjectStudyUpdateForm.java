@@ -16,7 +16,6 @@ public class ProjectStudyUpdateForm implements Command {
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
 		// 프로젝트스터디 모집글 수정 폼으로 상세보기에서 본 값들고 내려가기
-		ProjectStudyService dao = new ProjectStudyServiceImpl();
 		ProjectStudyVO projectStudyVO = new ProjectStudyVO();
 		
 		projectStudyVO.setProjectStudyId(Integer.valueOf(request.getParameter("projectStudyId")));
