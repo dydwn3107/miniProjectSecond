@@ -42,6 +42,7 @@ import co.community.yedam.member.command.MemberLogin;
 import co.community.yedam.member.command.MemberLoginForm;
 import co.community.yedam.member.command.MemberLogout;
 import co.community.yedam.member.command.MemberMyHome;
+import co.community.yedam.member.command.MemberNotifications;
 import co.community.yedam.member.command.MemberSelect;
 import co.community.yedam.member.command.MemberSelectList;
 import co.community.yedam.member.command.MemberUpdate;
@@ -99,6 +100,7 @@ public class FrontController extends HttpServlet {
 		map.put("/memberSelectList.do", new MemberSelectList());
 		map.put("/memberSelect.do", new MemberSelect());
 		map.put("/dashboard.do", new Dashboard());
+		map.put("/memberNotifications.do", new MemberNotifications());
 		
 		// Questions
 		map.put("/questionsWriteForm.do", new QuestionsWriteForm());

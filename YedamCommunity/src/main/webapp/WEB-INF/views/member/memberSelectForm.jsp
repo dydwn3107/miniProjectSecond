@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <!doctype html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="utf-8" />
 	<link rel="apple-touch-icon" sizes="76x76" href="myPageCSS/img/apple-icon.png">
@@ -33,24 +32,16 @@
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <link href="myPageCSS/css/themify-icons.css" rel="stylesheet">
 
-	 <!-- Favicon -->
-    <link rel="shortcut icon" href="public/img/favicon.ico">
-
-    <!-- Template -->
-    <link rel="stylesheet" href="public/graindashboard/css/graindashboard.css">
-    
-    </style>
 </head>
 <body>
 
-<body>
-<br>
-<br>
-<br>
-<br>
 <div class="wrapper">
 	<div class="sidebar" data-background-color="white" data-active-color="danger">
 
+    <!--
+		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
+		Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
+	-->
 
     	<div class="sidebar-wrapper">
             <div class="logo">
@@ -66,91 +57,107 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                 <li>
-                    <a href="memberSelectList.do">
-                        <i class="ti-view-list-alt"></i>
-                        <p>ALL USERS</p>
+                <li class="active">
+                    <a href="#">
+                        <i class="ti-user"></i>
+                        <p>User Profile</p>
                     </a>
                 </li>
-               
+                <li>
+                    <a href="memberSelectList.do">
+                        <i class="ti-view-list-alt"></i>
+                        <p>USERS</p>
+                    </a>
+                </li>
+                <li >
+                    <a href="memberNotifications.do">
+                        <i class="ti-bell"></i>
+                        <p>Notifications</p>
+                    </a>
+                </li>
+                
             </ul>
     	</div>
     </div>
 
     <div class="main-panel">
 		<nav class="navbar navbar-default">
-            <div class="container-fluid"  align="right">
-               <div class="dropdown mx-3 dropdown ml-2">
-                    <a id="profileMenuInvoker" class="header-complex-invoker" href="#" aria-controls="profileMenu" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-target="#profileMenu" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-animation-in="fadeIn" data-unfold-animation-out="fadeOut">
-                        <!--img class="avatar rounded-circle mr-md-2" src="#" alt="John Doe"-->
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="mr-md-2 avatar-placeholder">A</span>
-                        <span class="d-none d-md-block">ADMIN(관리자)</span>
-                        <i class="gd-angle-down d-none d-md-block ml-2"></i>
-                    </a>
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar bar1"></span>
+                        <span class="icon-bar bar2"></span>
+                        <span class="icon-bar bar3"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">User Profile</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="ti-panel"></i>
+								<p>Stats</p>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="ti-bell"></i>
+                                    <p class="notification">5</p>
+									<p>Notifications</p>
+									<b class="caret"></b>
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Notification 1</a></li>
+                                <li><a href="#">Notification 2</a></li>
+                                <li><a href="#">Notification 3</a></li>
+                                <li><a href="#">Notification 4</a></li>
+                                <li><a href="#">Another notification</a></li>
+                              </ul>
+                        </li>
+						<li>
+                            <a href="#">
+								<i class="ti-settings"></i>
+								<p>Settings</p>
+                            </a>
+                        </li>
+                    </ul>
 
                 </div>
-                <!-- End User Avatar -->
             </div>
         </nav>
-        <br>
-        <br>
-        <br>
-    
 
 
-	<div class="content">
-	
-		<div class="container-fluid">
-			<div class="row">
-			
-			<form id="mtd" method="post">
-				<div class="col-lg-4 col-md-5">
-					<div class="card card-user">
-						<div class="image">
-							<img src="myPageCSS/img/coding.jpg" alt="..." />
-						</div>
-						<div class="content">
-							<div class="author">
-								<img class="avatar border-white"
-									src="myPageCSS/img/faces/face-0.jpg" alt="..." />
-								<h4 class="title">${member.memberName}<br /> <a href="#"><small>@${member.memberName}</small></a>
-								</h4>
-							</div>
-							<p class="description text-center">
-								"I like the way you work it <br> No diggity <br> I
-								wanna bag it up"
-							</p>
-						</div>
-						<hr>
-						<div class="text-center">
-							<div class="row">
-								<div class="col-md-3 col-md-offset-1">
-									<h5>
-										12<br />
-										<small>Files</small>
-									</h5>
-								</div>
-								<div class="col-md-4">
-									<h5>
-										2GB<br />
-										<small>Used</small>
-									</h5>
-								</div>
-								<div class="col-md-3">
-									<h5>
-										24,6$<br />
-										<small>Spent</small>
-									</h5>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="card">
-						<div class="header">
-							<h4 class="title">Team Members</h4>
-						</div>
-		<div class="content">
-			<ul class="list-unstyled team-members">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                <form id="mtd" method="post">
+                    <div class="col-lg-4 col-md-5">
+                        <div class="card card-user">
+                            <div class="image">
+                                <img src="myPageCSS/img/coding.jpg" alt="이미지"/>
+                            </div>
+                            <div class="content">
+                                <div class="author">
+                                  <img class="avatar border-white" src="myPageCSS/img/faces/face-0.jpg" alt="..."/>
+                                 <h4 class="title">${member.memberName}<br /> <a href="#"><small>@${member.memberName}</small></a></h4>
+                                </div>
+                                <p class="description text-center">
+                                    "I like the way you work it <br>
+                                    No diggity <br>
+                                    I wanna bag it up"
+                                </p>
+                            </div>
+                            <br>
+                            <hr>
+                            <br>
+                        </div>
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Team Members</h4>
+                            </div>
+                            <div class="content">
+                               <ul class="list-unstyled team-members">
 					
 					
 						
@@ -246,13 +253,16 @@
 									</div>
 								</li>
 							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-8 col-md-7">
+                            </div>
+                        </div>
+                    </div>
+                   <div class="col-lg-8 col-md-7">
 					<div class="card">
 						<div class="header">
+						<br>
 							<h4 class="title">"${member.memberName}"님의 회원정보</h4>
+							<br>
+							<br>
 						</div>
 						<div class="content">
 							<form>
@@ -351,7 +361,12 @@ Github : @abc7777
 											
 												
 													<button type="button" class="btn btn-outline-dark"
-									onclick="location.href='memberSelectList.do'">회원목록</button>
+									onclick="location.href='memberSelectList.do'">회원목록</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									
+									
+										<button type="button" class="btn btn-outline-dark"
+										onclick="location.href='memberDelete.do'">회원삭제</button>
+									
 											</div>
 										</div>
 									</div>
@@ -367,7 +382,9 @@ Github : @abc7777
 			</div>
 		</div>
 	</div>
-	<footer class="footer">
+
+
+        <footer class="footer">
             <div class="container-fluid">
                 <nav class="pull-left">
                     <ul>
@@ -390,39 +407,37 @@ Github : @abc7777
                     </ul>
                 </nav>
 				<div class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="#">Yedam Community</a>
+                    &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">Creative Tim</a>
                 </div>
             </div>
         </footer>
 
+    </div>
+</div>
 
 
 </body>
 
-
-
     <!--   Core JS Files   -->
-    <script src="myPageCSS/js/jquery-1.10.2.js" type="text/javascript"></script>
-	<script src="myPageCSS/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
 
 	<!--  Checkbox, Radio & Switch Plugins -->
-	<script src="myPageCSS/js/bootstrap-checkbox-radio.js"></script>
+	<script src="assets/js/bootstrap-checkbox-radio.js"></script>
 
 	<!--  Charts Plugin -->
-	<script src="myPageCSS/js/chartist.min.js"></script>
+	<script src="assets/js/chartist.min.js"></script>
 
     <!--  Notifications Plugin    -->
-    <script src="myPageCSS/js/bootstrap-notify.js"></script>
+    <script src="assets/js/bootstrap-notify.js"></script>
 
     <!--  Google Maps Plugin    -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 
     <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
-	<script src="myPageCSS/js/paper-dashboard.js"></script>
-	
-	<script src="public/graindashboard/js/graindashboard.js"></script>
-<script src="public/graindashboard/js/graindashboard.vendor.js"></script>
+	<script src="assets/js/paper-dashboard.js"></script>
 
-	
+	<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+	<script src="assets/js/demo.js"></script>
 
 </html>
