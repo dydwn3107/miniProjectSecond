@@ -22,10 +22,31 @@
 select option[value=""][disabled] {
 	display: none;
 }
+
+section.heading-page {
+background-image: url(headercss/images/projectStudy1.jpg);
+background-position: center center;
+background-repeat: no-repeat;
+background-size: cover;
+padding-top: 220px;
+padding-bottom: 40px;
+text-align: center;
+}
+
 </style>
 
 </head>
 <body>
+
+	<section class="heading-page header-text" id="top">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1 class="display-4" style="font-weight: lighter; color: white">Project & Study</h1>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<div id="allContainer">
 		<form id="projectStudyWriteForm" action="projectStudyUpdate.do">

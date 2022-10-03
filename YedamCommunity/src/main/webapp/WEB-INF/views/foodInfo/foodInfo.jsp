@@ -115,14 +115,17 @@ section.heading-page {
 		</nav>
 	</header> -->
 	<br>
-	<br><br>
-	<br>
+	<c:if test="${memberAuthor eq 'ADMIN'}">
+		<h2 style="text-align: right; margin-right: 20%">
+			<button type="button" class="btn btn-primary btn-lg" style=" color: black !important; font-size:30px; background-color:aquaMarine !important" onclick="location.href='foodInfoInsertForm.do'">
+				맛집 추가
+			</button>
+		</h2>
+	</c:if>
 	<br>
 <!-- 
 	<!-- main contents : 카드 형식-->
 	<h2>"오늘은 뭐 먹지?"</h2>
-	<br>
-	<br>
 	<br>
 	<!--<c:if test="${not empty list }">
 		<c:forEach items="${list }" var="n">
@@ -150,74 +153,41 @@ section.heading-page {
 
 	<div class="container">
 		<div class="main-content">
-			<article class="component">
-				<img src="images/store1.jpg" alt="이미지1">
-				<div class="description">
-					<h3>신라식당</h3>
-					<p>#낙지볶음 #웨이팅 #한식</p>
-					<p class="here">세부내용</p>
-					<a href="store1.do" class="button">더보기</a>
-				</div>
-			</article>
-			<article class="component">
-				<img src="images/store2.jpg" alt="이미지2">
-				<div class="description">
-					<h3>만복국수</h3>
-					<p>#매일다른메뉴 #한식</p>
-					<p class="here">세부내용</p>
-					<a href="store2.do" class="button">더보기</a>
-				</div>
-			</article>
-			<article class="component">
-				<img src="images/store3.jpg" alt="이미지3">
-				<div class="description">
-					<h3>제주곤이칼국수</h3>
-					<p>#고기국수 #제주 #한식</p>
-					<p class="here">세부내용</p>
-					<a href="store3.do" class="button">더보기</a>
-				</div>
-			</article>
-			<article class="component">
-				<img src="images/store4.jpg" alt="이미지4">
-				<div class="description">
-					<h3>개미집 동성로점</h3>
-					<p>#매콤한 #낙곱새</p>
-					<p class="here">세부내용</p>
-					<a href="store4.do" class="button">더보기</a>
-				</div>
-			</article>
-			<article class="component">
-				<img src="images/store5.jpg" alt="이미지5">
-				<div class="description">
-					<h3>포꼬</h3>
-					<p>#베트남 #반쎄오존맛</p>
-					<p class="here">세부내용</p>
-					<a href="store5.do" class="button">더보기</a>
-				</div>
-			</article>
-			<article class="component">
-				<img src="images/store6.jpg" alt="이미지6">
-				<div class="description">
-					<h3>마차이짬뽕</h3>
-					<p>#짬뽕 #도라방스</p>
-					<p class="here">세부내용</p>
-					<a href="store6.do" class="button">더보기</a>
-				</div>
-			</article>
-
-
-
+			<!-- 맛집글이 없을때 -->
+			<c:if test="${empty foodList}">
+				<h2>맛집 등록이 되어있지 않습니다.</h2>
+			</c:if>
+		
+			<!-- 맛집글이 있을때 -->
+			<c:if test="${not empty foodList}">
+				<c:forEach items="${foodList}" var="food">
+					<article class="component">
+						<img src="${food.foodInfoAttechDir}" alt="${food.foodInfoName}사진">
+						<div class="description">
+							<h3>${food.foodInfoName}</h3>
+							<p>${food.foodInfoHashtag}</p>
+							<a href="#" onclick="foodInfoDetail('${food.foodInfoId}')" class="button">더보기</a>
+						</div>
+					</article>
+				</c:forEach>
+			</c:if>
 		</div>
 		<br> <br> <br> <br>
-
+		<!-- 맛집게시글번호 가져갈 form과 input -->
+		<div>
+			<form id="foodInfo" action="foodInfoDetail.do">
+				<input type="hidden" id="foodInfoId" name="foodInfoId">
+			</form>
+		</div>
 	</div>
+	<br><br><br>
 
-
-
-	<br>
-	<br>
-	<br>
-
-
+	<script type="text/javascript">
+	    // 해당 맛집게시글번호 들고 상세페이지로
+		function foodInfoDetail(id) {
+			document.getElementById('foodInfoId').value = id;
+			foodInfo.submit();
+		}
+	</script>
 </body>
 </html>

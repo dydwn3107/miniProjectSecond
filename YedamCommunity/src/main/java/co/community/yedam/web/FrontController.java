@@ -15,13 +15,19 @@ import javax.servlet.http.HttpServletResponse;
 import co.community.yedam.Main;
 import co.community.yedam.cafeInfo.command.InfoCafe;
 import co.community.yedam.common.Command;
+import co.community.yedam.foodInfo.command.FoodInfo;
+import co.community.yedam.foodInfo.command.FoodInfoDelete;
+import co.community.yedam.foodInfo.command.FoodInfoDetail;
+import co.community.yedam.foodInfo.command.FoodInfoInsert;
+import co.community.yedam.foodInfo.command.FoodInfoInsertForm;
+import co.community.yedam.foodInfo.command.FoodInfoUpdate;
+import co.community.yedam.foodInfo.command.FoodInfoUpdateForm;
 import co.community.yedam.foodInfo.command.Store1;
 import co.community.yedam.foodInfo.command.Store2;
 import co.community.yedam.foodInfo.command.Store3;
 import co.community.yedam.foodInfo.command.Store4;
 import co.community.yedam.foodInfo.command.Store5;
 import co.community.yedam.foodInfo.command.Store6;
-import co.community.yedam.foodInfo.command.foodInfo;
 import co.community.yedam.freeBoard.command.AjaxFreeBoardSearch;
 import co.community.yedam.freeBoard.command.FreeBoard;
 import co.community.yedam.freeBoard.command.FreeBoardDelete;
@@ -131,9 +137,14 @@ public class FrontController extends HttpServlet {
 		map.put("/freeBoardSearchForm.do", new FreeBoardSearchForm());
 		map.put("/ajaxFreeBoardSearch.do", new AjaxFreeBoardSearch());
 		
-		// Info
-		map.put("/infoFood.do", new foodInfo());
-		map.put("/infoCafe.do", new InfoCafe());
+		// FoodInfo
+		map.put("/foodInfo.do", new FoodInfo()); 						// 맛집 메인 페이지
+		map.put("/foodInfoDetail.do", new FoodInfoDetail()); 			// 맛집 상세보기
+		map.put("/foodInfoInsertForm.do", new FoodInfoInsertForm()); 	// 맛집 글쓰기 폼으로
+		map.put("/foodInfoInsert.do", new FoodInfoInsert()); 			// 맛집 등록
+		map.put("/foodInfoUpdateForm.do", new FoodInfoUpdateForm()); 	// 맛집 수정 폼으로
+		map.put("/foodInfoUpdate.do", new FoodInfoUpdate()); 			// 맛집 수정
+		map.put("/foodInfoDelete.do", new FoodInfoDelete()); 			// 맛집 삭제
 		map.put("/store1.do", new Store1());
 		map.put("/store2.do", new Store2());
 		map.put("/store3.do", new Store3());
@@ -141,13 +152,16 @@ public class FrontController extends HttpServlet {
 		map.put("/store5.do", new Store5());
 		map.put("/store6.do", new Store6());
 		
+		// CafeInfo
+		map.put("/infoCafe.do", new InfoCafe());
+		
 		// ProjectStudy
 		map.put("/projectStudy.do", new ProjectStudy()); 					 // 프로젝트스터디 메인페이지
 		map.put("/projectStudyCard.do", new ProjectStudyCard()); 			 // 프로젝트스터디 전체 모집건 필터링해서 가져오기
 		map.put("/projectCard.do", new ProjectCard()); 						 // 프로젝트 모집건만 필터링해서 가져오기
 		map.put("/studyCard.do", new StudyCard()); 							 // 스터디 모집건만 필터링해서 가져오기
 		map.put("/projectStudyInsertForm.do", new ProjectStudyInsertForm()); // 프로젝트스터디 새글쓰기 폼으로
-		map.put("/projectStudyInsert.do", new ProjectStudyInsert()); 		 // 프로젝트스터디 글쓰기 form의 데이터 들고와서 insert
+		map.put("/projectStudyInsert.do", new ProjectStudyInsert()); 		 // 프로젝트스터디 모집글 등록
 		map.put("/projectStudySelect.do", new ProjectStudySelect()); 		 // 프로젝트스터디 모집글 상세보기.
 		map.put("/projectStudyUpdateForm.do", new ProjectStudyUpdateForm()); // 프로젝트스터디 모집글 수정폼으로.
 		map.put("/projectStudyUpdate.do", new ProjectStudyUpdate()); 		 // 프로젝트스터디 모집글 수정.

@@ -169,7 +169,6 @@ h3#newCard:hover > button > h3.display-6 {
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-
 					<h1 class="display-4" style="font-weight: lighter; color: white">Project & Study</h1>
 				</div>
 			</div>

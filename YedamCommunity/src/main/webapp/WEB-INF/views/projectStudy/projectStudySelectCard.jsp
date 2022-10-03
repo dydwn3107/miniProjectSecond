@@ -33,10 +33,31 @@
 		margin-left: 50px;
 		color: black;
 	}
+	
+	section.heading-page {
+	background-image: url(headercss/images/projectStudy1.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 220px;
+	padding-bottom: 40px;
+	text-align: center;
+}
 </style>
 
 </head>
 <body>
+	
+	<section class="heading-page header-text" id="top">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1 class="display-4" style="font-weight: lighter; color: white">Project & Study</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<br><br>
 	
 <!-- 모집글 수정 실패 시. 돌아왔을때 실패메세지 alert -->
