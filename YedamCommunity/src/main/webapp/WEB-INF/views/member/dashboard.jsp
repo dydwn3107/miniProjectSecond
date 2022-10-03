@@ -62,6 +62,12 @@
                         <p>USERS</p>
                     </a>
                 </li>
+                <li>
+                    <a href="memberNotifications.do">
+                        <i class="ti-bell"></i>
+                        <p>Notifications</p>
+                    </a>
+                </li>
             
 				
             </ul>
@@ -211,7 +217,7 @@
                     <div class="col-md-6">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">게시판 이용 통계</h4>
+                                <h4 class="title"><b>게시판 이용 통계</b></h4>
                                 <p class="category">Board Statics </p>
                             </div>
                             <div class="content">
@@ -234,7 +240,7 @@
                              <div class="col-md-6">
                         <div class="card ">
                             <div class="header">
-                                <h4 class="title">가입자 현황 </h4>
+                                <h4 class="title"><b>가입자 현황</b> </h4>
                                 <p class="category">All members who have left</p>
                             </div>
                             <div class="content">
@@ -268,7 +274,7 @@
 
                         <li>
                             <a href="http://www.creative-tim.com">
-                                Creative Tim
+                                Yedam Community
                             </a>
                         </li>
                         <li>

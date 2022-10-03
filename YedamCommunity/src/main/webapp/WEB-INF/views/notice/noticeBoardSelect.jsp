@@ -180,14 +180,14 @@ section.heading-page {
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="display-4" style="font-weight: lighter; color: white">공지사항 상세</h1>
+					<h1 class="display-4" style="font-weight: lighter; color: white">공지사항
+						상세</h1>
 				</div>
 			</div>
 		</div>
 	</section>
 	<div align="center">
-		<br>
-		<br>
+		<br> <br>
 		<section class="article-detail table-common con row">
 			<div class="article-writer cell">
 				<div class="writer-icon"></div>
@@ -229,6 +229,50 @@ section.heading-page {
 			class="btn btn-outline-dark">목록</button>
 	</div>
 	<br>
+	<div align="center">
+		<div class="con reply">
+			<h1 class="">댓글 입력</h1>
+			<section class="reply-form">
+				<form action="return false;">
+					<div align="left">
+						<textarea placeholder="내용을 입력하세요."></textarea>
+						<input type="submit" onclick="subCall('C')"
+							class="btn btn-outline-dark">
+					</div>
+				</form>
+			</section>
+
+			<h1 class="">댓글 목록</h1>
+			<section class="reply-list table-common">
+				<table border="1">
+					<colgroup>
+						<col width="100px">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>작성자</th>
+							<th>댓글내용</th>
+							<th>작성일</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:if test="${empty cLists }">
+							<td colspan="6">댓글이 존재하지 않습니다.</td>
+						</c:if>
+						<c:if test="${empty cLists }">
+							<c:forEach items="${cLists }" var="c">
+								<tr>
+									<td>${c.memberId }</td>
+									<td>${c.freeBoardCommentSubject }</td>
+									<td>${c.freeBoardCommentDate }</td>
+								</tr>
+							</c:forEach>
+						</c:if>
+					</tbody>
+				</table>
+			</section>
+		</div>
+	</div>
 	<br>
 	<div>
 		<form id="noticeBoardfrm" action="" method="post">

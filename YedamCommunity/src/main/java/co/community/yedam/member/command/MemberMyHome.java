@@ -24,7 +24,7 @@ public class MemberMyHome implements Command {
 //		System.out.println(vo);
 		request.setAttribute("member", vo); //페이지에 전달하기 위해
 		
-		return "main/member/memberMyHomeform";
+		return "noTiles:member/memberMyHomeform";
 		
 	}
 }
