@@ -287,11 +287,10 @@ section.heading-page {
 			                    
 			                    <div class="col-md-6">
 			                    </div>
-			                    <div class="col-md-6">
+			                    <div class="col-md-7">
 			                    </div>
 			                    
-			                    
-			                    <div class="col-md-6">
+			                    <div class="col-md-5">
 			                    	<input type="hidden" id="foodInfoHashtag" name="foodInfoHashtag">
 			                        <input type="submit" class="btnRegister"  value="맛집 등록"/>
 			                        <input type="button" class="btnRegister" onclick="location.href='foodInfo.do'" value="취소"/>

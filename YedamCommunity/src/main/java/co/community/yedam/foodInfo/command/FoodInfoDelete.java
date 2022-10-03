@@ -26,6 +26,7 @@ public class FoodInfoDelete implements Command {
 			request.setAttribute("foodInfoDeleteMessage", "맛집글 삭제에 실패했습니다.");
 			viewPage = "foodInfo/foodInfo/foodInfoDetail";
 		}
+		
 		return viewPage;
 	}
 

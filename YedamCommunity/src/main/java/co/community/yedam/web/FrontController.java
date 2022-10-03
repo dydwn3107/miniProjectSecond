@@ -13,7 +13,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.community.yedam.Main;
-import co.community.yedam.cafeInfo.command.InfoCafe;
+import co.community.yedam.cafeInfo.command.CafeInfo;
+import co.community.yedam.cafeInfo.command.CafeInfoDelete;
+import co.community.yedam.cafeInfo.command.CafeInfoInsert;
+import co.community.yedam.cafeInfo.command.CafeInfoInsertForm;
+import co.community.yedam.cafeInfo.command.CafeInfoUpdate;
+import co.community.yedam.cafeInfo.command.CafeInfoUpdateForm;
 import co.community.yedam.comment.command.CommentDelete;
 import co.community.yedam.comment.command.CommentInsert;
 import co.community.yedam.common.Command;
@@ -24,12 +29,6 @@ import co.community.yedam.foodInfo.command.FoodInfoInsert;
 import co.community.yedam.foodInfo.command.FoodInfoInsertForm;
 import co.community.yedam.foodInfo.command.FoodInfoUpdate;
 import co.community.yedam.foodInfo.command.FoodInfoUpdateForm;
-import co.community.yedam.foodInfo.command.Store1;
-import co.community.yedam.foodInfo.command.Store2;
-import co.community.yedam.foodInfo.command.Store3;
-import co.community.yedam.foodInfo.command.Store4;
-import co.community.yedam.foodInfo.command.Store5;
-import co.community.yedam.foodInfo.command.Store6;
 import co.community.yedam.freeBoard.command.AjaxFreeBoardSearch;
 import co.community.yedam.freeBoard.command.FreeBoard;
 import co.community.yedam.freeBoard.command.FreeBoardDelete;
@@ -149,15 +148,14 @@ public class FrontController extends HttpServlet {
 		map.put("/foodInfoUpdateForm.do", new FoodInfoUpdateForm()); 	// 맛집 수정 폼으로
 		map.put("/foodInfoUpdate.do", new FoodInfoUpdate()); 			// 맛집 수정
 		map.put("/foodInfoDelete.do", new FoodInfoDelete()); 			// 맛집 삭제
-		map.put("/store1.do", new Store1());
-		map.put("/store2.do", new Store2());
-		map.put("/store3.do", new Store3());
-		map.put("/store4.do", new Store4());
-		map.put("/store5.do", new Store5());
-		map.put("/store6.do", new Store6());
 		
 		// CafeInfo
-		map.put("/infoCafe.do", new InfoCafe());
+		map.put("/cafeInfo.do", new CafeInfo()); // 스터디카페 메인 페이지
+		map.put("/cafeInfoInsertForm.do", new CafeInfoInsertForm()); // 스터디카페 글쓰기 폼으로
+		map.put("/cafeInfoInsert.do", new CafeInfoInsert()); // 스터디카페 등록
+		map.put("/cafeInfoUpdateForm.do", new CafeInfoUpdateForm()); // 스터디카페 수정 폼으로
+		map.put("/cafeInfoUpdate.do", new CafeInfoUpdate()); // 스터디카페 수정
+		map.put("/cafeInfoDelete.do", new CafeInfoDelete()); // 스터디카페 삭제
 		
 		// ProjectStudy
 		map.put("/projectStudy.do", new ProjectStudy()); 					 // 프로젝트스터디 메인페이지

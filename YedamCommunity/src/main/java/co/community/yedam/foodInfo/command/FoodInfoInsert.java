@@ -28,7 +28,7 @@ public class FoodInfoInsert implements Command {
 		try {
 			MultipartRequest multi =
 					new MultipartRequest(request, saveFolder, maxSize, charactSet, new DefaultFileRenamePolicy());
-			String fileName = multi.getFilesystemName("foodInfoAttech"); // 물리적 위치에 파일저장.  여기의 file이라는 것은 noticeWriteForm.jsp 의 id,name값.
+			String fileName = multi.getFilesystemName("foodInfoAttech"); // 물리적 위치에 파일저장.
 			String originalFileName = multi.getOriginalFileName("foodInfoAttech"); // 실제파일명
 			
 			vo.setFoodInfoName(multi.getParameter("foodInfoName"));
@@ -72,7 +72,7 @@ public class FoodInfoInsert implements Command {
 		if (result != 0) {
 			viewPage = "foodInfo.do";
 		} else {
-			request.setAttribute("foodInfoInsertMessage", "맛집글 등록에 실패했습니다.");
+			request.setAttribute("foodInfoInsertMessage", "맛집 등록에 실패했습니다.");
 		}
 		
 		return viewPage;

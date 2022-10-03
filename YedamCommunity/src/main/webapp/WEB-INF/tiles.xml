@@ -15,15 +15,21 @@
 		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp"/>
 	</definition>
 	
-	<!-- ProjectStudy 페이지 들은 title에 Project and Study 나오게 -->
+	<!-- ProjectStudy 관련 페이지 => title에 Project and Study 나오게 -->
 	<definition name="WILDCARD:projectStudy/*/*" extends="mainTiles">
 		<put-attribute name="title" value="Project and Study"/>
 		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp"/>
 	</definition>
 	
-	<!-- ProjectStudy 페이지 들은 title에 Project and Study 나오게 -->
+	<!-- FoodInfo관련 페이지 => title에 Food Information 나오게 -->
 	<definition name="WILDCARD:foodInfo/*/*" extends="mainTiles">
 		<put-attribute name="title" value="Food Information"/>
+		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp"/>
+	</definition>
+	
+	<!-- CafeInfo 관련 페이지 => title에 Cafe Information 나오게 -->
+	<definition name="WILDCARD:cafeInfo/*/*" extends="mainTiles">
+		<put-attribute name="title" value="StudyCafe Information"/>
 		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp"/>
 	</definition>
 </tiles-definitions>

@@ -1,16 +1,16 @@
-package co.community.yedam.foodInfo.command;
+package co.community.yedam.cafeInfo.command;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.community.yedam.common.Command;
 
-public class Store6 implements Command {
+public class CafeInfoInsertForm implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
-		return "main/store/store6";
+		// 스터디카페 글쓰기 폼으로
+		return "cafeInfo/cafeInfo/cafeInfoInsertForm";
 	}
 
 }
