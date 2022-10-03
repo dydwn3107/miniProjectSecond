@@ -120,7 +120,7 @@
                     </h1>
 
                     <p class="text-secondary-white-color" data-aos="fade-up" data-aos-delay="1000">
-                        create a great video for your <strong class="custom-underline">website</strong>
+                        make a great developer-mate for your <strong class="custom-underline">yedam</strong>
                     </p>
                 </div>
 

@@ -60,7 +60,7 @@
 							<li class="has-sub"><a href="foodInfo.do">정보 게시판</a>
 								<ul class="sub-menu">
 									<li><a href="foodInfo.do">맛집</a></li>
-									<li><a href="infoCafe.do">스터디 카페</a></li>
+									<li><a href="cafeInfo.do">스터디 카페</a></li>
 								</ul></li>
 							<li><c:choose>
 									<c:when test="${empty memberId }">

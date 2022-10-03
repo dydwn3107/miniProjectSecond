@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="co.community.yedam.cafeInfo.service.CafeInfoMapper">
+	
+	<select id="cafeInfoSelectList" resultType="co.community.yedam.cafeInfo.service.CafeInfoVO">
+		SELECT * FROM CAFE_INFO ORDER BY CAFE_INFO_ID DESC
+	</select>
+	
+	<select id="cafeInfoSelect" resultType="co.community.yedam.cafeInfo.service.CafeInfoVO">
+		SELECT * FROM CAFE_INFO
+		WHERE CAFE_INFO_ID = #{cafeInfoId}
+	</select>
+	
+	<insert id="cafeInfoInsert" parameterType="co.community.yedam.cafeInfo.service.CafeInfoVO">
+		<selectKey keyProperty="cafeInfoId" resultType="int" order="BEFORE">
+			SELECT CASE WHEN MAX(CAFE_INFO_ID) IS NULL THEN 1 ELSE
+			MAX(CAFE_INFO_ID) + 1 END AS ID
+			FROM CAFE_INFO
+		</selectKey>
+	
+		INSERT INTO CAFE_INFO
+		VALUES (#{cafeInfoId}, #{cafeInfoName}, #{cafeInfoHashtag}, #{cafeInfoLink}, #{cafeInfoAttech}, #{cafeInfoAttechDir})
+	</insert>
+	
+	<update id="cafeInfoUpdate" parameterType="co.community.yedam.cafeInfo.service.CafeInfoVO">
+		UPDATE CAFE_INFO
+		SET CAFE_INFO_NAME = #{cafeInfoName},
+		    CAFE_INFO_HASHTAG = #{cafeInfoHashtag},
+		    CAFE_INFO_LINK = #{cafeInfoLink},
+		    CAFE_INFO_ATTECH = #{cafeInfoAttech},
+		    CAFE_INFO_ATTECH_DIR = #{cafeInfoAttechDir}
+		WHERE CAFE_INFO_ID = #{cafeInfoId}
+	</update>
+	
+	<delete id="cafeInfoDelete" parameterType="co.community.yedam.cafeInfo.service.CafeInfoVO">
+		DELETE CAFE_INFO WHERE CAFE_INFO_ID = #{cafeInfoId}
+	</delete>
+</mapper>

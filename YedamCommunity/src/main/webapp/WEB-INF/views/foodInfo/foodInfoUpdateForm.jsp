@@ -283,11 +283,11 @@ section.heading-page {
 			                    
 			                    <div class="col-md-6">
 			                    </div>
-			                    <div class="col-md-6">
+			                    <div class="col-md-7">
 			                    </div>
 			                    
 			                    
-			                    <div class="col-md-6">
+			                    <div class="col-md-5">
 			                    	<input type="hidden" id="foodInfoHashtag" name="foodInfoHashtag">
 			                        <input type="hidden" id="foodInfoId" name="foodInfoId" value="${foodInfo.foodInfoId}">
 			                        <input type="submit" class="btnRegister"  value="맛집 수정"/>
