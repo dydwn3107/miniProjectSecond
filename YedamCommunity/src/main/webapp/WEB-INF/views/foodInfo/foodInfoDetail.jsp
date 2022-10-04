@@ -86,7 +86,7 @@ section.heading-page {
 						<br>${foodInfo.foodInfoBreaktime} 브레이크타임
 					</c:if>
 					<c:if test="${not empty foodInfo.foodInfoLastorder}">
-						<br> 21:00 라스트 오더
+						<br> ${foodInfo.foodInfoLastorder} 라스트 오더
 					</c:if>
 					<br><br>
 					<p>--------Menu--------</p>
