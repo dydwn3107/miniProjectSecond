@@ -143,7 +143,10 @@ section.heading-page {
 
 	<div class="container">
 		<div class="main-content" style="justify-content:space-around">
-		
+			<c:if test="${empty cafeList}">
+				<h2>스터디카페 등록이 되어있지 않습니다.</h2>
+			</c:if>
+			
 			<c:forEach items="${cafeList}" var="cafe">
 				<article class="component">
 					<img src="${cafe.cafeInfoAttechDir}" alt="${cafe.cafeInfoName} 사진" style="background-size: cover; width:353px; height:265px;">
