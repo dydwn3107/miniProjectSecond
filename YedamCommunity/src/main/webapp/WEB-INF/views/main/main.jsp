@@ -637,7 +637,7 @@
 				<div class="col-md-3 col-sm-6">
 					<div class="team wow slideInLeft">
 						<div class="img-hexagon">
-							<img src="css2/images/member5.jpg" alt=""> <span
+							<img src="css2/images/park.jpg" alt=""> <span
 								class="img-top"></span> <span class="img-bottom"></span>
 						</div>
 						<div class="team-content">
@@ -657,12 +657,12 @@
 				<div class="col-md-3 col-sm-6">
 					<div class="team wow slideInLeft">
 						<div class="img-hexagon">
-							<img src="css2/images/member2.jpg" alt=""> <span
+							<img src="css2/images/bongjun.jpg" alt=""> <span
 								class="img-top"></span> <span class="img-bottom"></span>
 						</div>
 						<div class="team-content">
 							<h3>김두영</h3>
-							<p>software engineer</p>
+							<p>Princess</p>
 							<div class="team-social">
 								<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a
 									class="twt" href="#"><i class="fa fa-twitter"></i></a> <a
@@ -682,7 +682,7 @@
 						</div>
 						<div class="team-content">
 							<h3>김민지</h3>
-							<p>Web Designer</p>
+							<p>na munhui</p>
 							<div class="team-social">
 								<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a
 									class="twt" href="#"><i class="fa fa-twitter"></i></a> <a
@@ -697,12 +697,12 @@
 				<div class="col-md-3 col-sm-6">
 					<div class="team animate wow slideInRight">
 						<div class="img-hexagon">
-							<img src="css2/images/member3.jpg" alt=""> <span
+							<img src="css2/images/gamst.jpg" alt=""> <span
 								class="img-top"></span> <span class="img-bottom"></span>
 						</div>
 						<div class="team-content">
 							<h3>이현성</h3>
-							<p>Web Designer</p>
+							<p>욕망의 항아리</p>
 							<div class="team-social">
 								<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a
 									class="twt" href="#"><i class="fa fa-twitter"></i></a> <a
@@ -722,7 +722,7 @@
 						</div>
 						<div class="team-content">
 							<h3>황용주</h3>
-							<p>Web Designer</p>
+							<p>face no.1</p>
 							<div class="team-social">
 								<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a
 									class="twt" href="#"><i class="fa fa-twitter"></i></a> <a
@@ -737,7 +737,7 @@
 				<div class="col-md-3 col-sm-6">
 					<div class="team animate wow slideInRight">
 						<div class="img-hexagon">
-							<img src="css2/images/team/team4.jpg" alt=""> <span
+							<img src="css2/images/seokj.png" alt=""> <span
 								class="img-top"></span> <span class="img-bottom"></span>
 						</div>
 						<div class="team-content">
@@ -757,7 +757,7 @@
 				<div class="col-md-3 col-sm-6">
 					<div class="team animate wow slideInRight">
 						<div class="img-hexagon">
-							<img src="css2/images/team/team4.jpg" alt=""> <span
+							<img src="css2/images/chang.png" alt=""> <span
 								class="img-top"></span> <span class="img-bottom"></span>
 						</div>
 						<div class="team-content">
@@ -778,7 +778,7 @@
 				<div class="col-md-3 col-sm-6">
 					<div class="team animate wow slideInRight">
 						<div class="img-hexagon">
-							<img src="css2/images/team/team4.jpg" alt=""> <span
+							<img src="css2/images/micol.png" alt=""> <span
 								class="img-top"></span> <span class="img-bottom"></span>
 						</div>
 						<div class="team-content">
